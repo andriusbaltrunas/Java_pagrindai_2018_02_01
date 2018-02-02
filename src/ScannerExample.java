@@ -36,6 +36,7 @@ public class ScannerExample {
         }
     }
 
+    //test commit
     private int countChars(String name) {
         int numb = 0;
         for (int i = 0; i < name.length(); i++) {
