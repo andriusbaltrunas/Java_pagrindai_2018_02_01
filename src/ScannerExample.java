@@ -7,14 +7,30 @@ public class ScannerExample {
 
     public static void main(String[] args) {
 
-        System.out.println("Iveskite savo varda");
-
         Scanner sc = new Scanner(System.in);// objecta nuskaitymui is consoles
+        ScannerExample scannerExample = new ScannerExample();// objectas musu klases
+        String name = "";
+        do {
+            System.out.println("Iveskite savo varda");
+            name = sc.nextLine();// nuskaito visa eilute ivesta
+            System.out.println("Jusu vardas yra " + name);
 
-        String name = sc.nextLine();// nuskaito visa eilute ivesta
+            int length = name.length();
+
+            int countChar = scannerExample.countChars(name);
+            if (length % 2 == 0) {
+                System.out.println("Ivestas zodis " + name + " yra lyginis, ilgis "
+                        + length + "rasta raidziu " + countChar);
+            } else {
+                System.out.println("Ivestas zodis " + name + " yra nelyginis, ilgis"
+                        + length + " rasta raidziu " + countChar);
+            }
+
+        } while (!name.equals("pabaiga"));
+
+
         //String name = sc.next(); // nuskaitimui iki tarpo
 
-        System.out.println("Jusu vardas yra " + name);
 
         String a = "Petras";
         String b = "Petras";
@@ -23,17 +39,7 @@ public class ScannerExample {
         } else {
             System.out.println("NE");
         }
-        int length = name.length();
 
-        ScannerExample scannerExample = new ScannerExample();// objectas musu klases
-        int countChar = scannerExample.countChars(name);
-        if (length % 2 == 0) {
-            System.out.println("Ivestas zodis " + name + " yra lyginis, ilgis "
-                    + length + "rasta raidziu " + countChar);
-        } else {
-            System.out.println("Ivestas zodis " + name + " yra nelyginis, ilgis"
-                    + length + " rasta raidziu " + countChar);
-        }
     }
 
     //test commit
