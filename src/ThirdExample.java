@@ -1,3 +1,5 @@
+import utils.MyNumberUtils;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -9,14 +11,14 @@ public class ThirdExample {
     public static void main(String[] args) {
         System.out.println("Pasirinkite punkta\n1. Trikimpis\n2. Staciakampis\n3. Kvadratas\n4. Apskritimas");
         Scanner sc = new Scanner(System.in);
-        int action = getCorrectNumber(sc);
+        int action = MyNumberUtils.getCorrectNumber(sc);
 
-        switch (action){
+        switch (action) {
             case 1:
                 System.out.println("Iveskite krasteine a");
-                int petras = getCorrectNumber(sc);
+                int petras = MyNumberUtils.getCorrectNumber(sc);
                 System.out.println("Iveskite krasteine b");
-                int antanas = getCorrectNumber(sc);
+                int antanas = MyNumberUtils.getCorrectNumber(sc);
                 double result = trikampis(petras, antanas);
                 System.out.println("Trikampio plotas yra " + result);
                 break;
@@ -32,23 +34,9 @@ public class ThirdExample {
 
     }
 
-    private static double trikampis(int a, int b){
-        return (a*b)/2;
+    private static double trikampis(int a, int b) {
+        return (a * b) / 2;
     }
 
-    private static int getCorrectNumber(Scanner sc){
-        int numb = 0;
-        while (true){
-            System.out.println("Iveskite skaicius");
-            try {
-                numb = sc.nextInt();
-                break;
-            }catch (InputMismatchException e){
-                System.out.println("Juk sakiau kad ivesk skaiciu!!!!");
-                sc.nextLine();
-            }
-        }
 
-        return numb;
-    }
 }
